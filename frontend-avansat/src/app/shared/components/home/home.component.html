@@ -1,0 +1,18 @@
+<mat-toolbar class="toolbar">
+  <p class="title">Survey App</p>
+  <div class="buttons" *ngIf="!firebaseService.isLoggedIn">
+    <button mat-raised-button (click)="login()" color="primary">Login</button>
+    <button mat-raised-button (click)="register()">Register</button>
+  </div>
+  <div class="buttons" *ngIf="firebaseService.isLoggedIn">
+    <button mat-raised-button (click)="logout()" color="primary">Logout</button>
+  </div>
+</mat-toolbar>
+<div class="home-container">
+  <div class="background"></div>
+  <div class="text">
+    <p>Welcome to the Survey App</p>
+    <p>Be the person with great ideas.</p>
+    <p>Surveys give you fresh perspectives.</p>
+  </div>
+</div>
