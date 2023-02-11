@@ -74,7 +74,9 @@ export class SurveyFormComponent implements OnInit {
 
   addAnswer(index: number) {
     const newAnswer = this.fb.group({
-      text: ''
+      text: '',
+      count: 0,
+      chosen: false
     });
     this.answersByQuestion(index).push(newAnswer);
   }

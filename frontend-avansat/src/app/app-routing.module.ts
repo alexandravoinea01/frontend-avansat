@@ -8,6 +8,7 @@ import {SurveyCreatedComponent} from "./components/survey-created/survey-created
 import {AngularFireAuthGuard} from "@angular/fire/compat/auth-guard";
 import {SurveyFormComponent} from "./components/survey-form/survey-form.component";
 import {SurveysComponent} from "./components/surveys/surveys.component";
+import {TakeSurveyComponent} from "./components/take-survey/take-survey.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: "full"},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'home', component: HomeComponent},
   {path: 'surveys', component: SurveysComponent},
+  {path: 'surveys/:surveyId/take-survey', component: TakeSurveyComponent},
   {path: 'profile/surveys-created', component: SurveyCreatedComponent, canActivate: [AngularFireAuthGuard]},
   {path: 'profile/new-survey', component: SurveyFormComponent, canActivate: [AngularFireAuthGuard]}
 ]

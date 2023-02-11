@@ -1,0 +1,49 @@
+<div class="form-container">
+  <div class="survey" *ngIf="survey$ | async as survey">
+    <div class="header">
+      <h1>{{survey.title}}</h1>
+      <div class="btns">
+        <button mat-raised-button
+                color="primary"
+                (click)="submit(survey)"
+        >
+          <mat-icon>save</mat-icon>
+          Submit
+        </button>
+        <button mat-raised-button
+                color="warn"
+                (click)="onClickCancel()"
+        >
+          <mat-icon>cancel</mat-icon>
+          Cancel
+        </button>
+      </div>
+    </div>
+
+    <p>
+      <b>Category:</b>
+      {{survey.category}}
+    </p>
+    <p>
+      <b>Description:</b>
+      {{survey.description}}
+    </p>
+    <p>
+      <b>Author:</b>
+      {{survey.createdBy}}
+    </p>
+    <div class="questions" *ngFor="let question of survey.questions;index as i">
+      <div>
+        <p>{{i + 1}}. {{ question.text }}</p>
+        <ul class="answers" *ngFor="let answer of question.answers; index as j">
+          <mat-checkbox
+            (change)="isChecked($event,i,j, survey)"
+            [checked]="answer.chosen">
+            {{answer.text}}
+          </mat-checkbox>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>

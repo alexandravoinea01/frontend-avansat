@@ -19,11 +19,11 @@ export class SurveysService {
   ) {
   }
 
-  getSurveyById(id: string) {
+  getSurveyById(id: string): Observable<SurveyModel> {
     return this.angularFirestore
       .collection(SurveysService.collectionName)
       .doc(id)
-      .valueChanges();
+      .valueChanges() as Observable<SurveyModel>;
   }
 
   getSurveys() {

@@ -10,6 +10,9 @@ import {SurveysService} from "../../services/surveys.service";
 export class SurveysComponent implements OnInit {
 
   surveys!: SurveyModel[];
+  
+  // @ts-ignore
+  currentUser: string = JSON.parse(localStorage.getItem('user')).email;
 
   constructor(
     private surveysService: SurveysService

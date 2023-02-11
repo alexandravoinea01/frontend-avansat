@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {SurveyModel} from "../../models";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-survey-card',
@@ -9,14 +10,17 @@ import {SurveyModel} from "../../models";
 export class SurveyCardComponent implements OnInit {
 
   @Input() survey!: SurveyModel;
+  @Input() hideButton = false;
 
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
   }
 
   ngOnInit(): void {
   }
 
   takeSurvey() {
-    console.log()
+    this.router.navigate(['surveys', this.survey.id, 'take-survey']);
   }
 }
