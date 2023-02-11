@@ -1,0 +1,15 @@
+.container {
+  min-height: 100vh;
+  width: 80vw;
+  overflow: hidden;
+}
+
+.surveys-container {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}

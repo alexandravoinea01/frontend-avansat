@@ -1,0 +1,15 @@
+<div class="container">
+  <button mat-raised-button
+          color="primary"
+          class="new-button"
+          (click)="createSurvey()">
+    <mat-icon>add</mat-icon>
+    New
+  </button>
+
+  <div class="surveys-container">
+    <div class="survey" *ngFor="let survey of surveys">
+      <app-survey-card [survey]="survey"></app-survey-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<mat-card class="container">
+  <mat-card-header class="title">{{survey.title}}</mat-card-header>
+  <mat-card-content class="content">
+    <p>
+      <b>Category:</b>
+      {{survey.category}}
+    </p>
+    <p>
+      <b>Description:</b>
+      {{survey.description}}
+    </p>
+    <p>
+      <b>Author:</b>
+      {{survey.createdBy}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="take-survey-button">
+    <button mat-raised-button
+            (click)="takeSurvey()"
+    >Take survey!
+    </button>
+  </mat-card-actions>
+</mat-card>

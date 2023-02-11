@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FirebaseService} from "../../../services/firebase.service";
+import {AuthService} from "../../../services/auth.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -11,7 +11,7 @@ export class SideNavMenuComponent {
 
   constructor(
     private router: Router,
-    public firebaseService: FirebaseService
+    public firebaseService: AuthService
   ) {
   }
 

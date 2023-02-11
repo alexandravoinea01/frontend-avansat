@@ -1,15 +1,17 @@
 import {Injectable} from '@angular/core';
 import {AngularFireAuth} from "@angular/fire/compat/auth";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
-export class FirebaseService {
+export class AuthService {
 
   isLoggedIn = !!localStorage.getItem('user');
 
   constructor(
-    public firebaseAuth: AngularFireAuth
+    public firebaseAuth: AngularFireAuth,
+    private router: Router
   ) {
   }
 
@@ -31,6 +33,7 @@ export class FirebaseService {
 
   logout() {
     this.firebaseAuth.signOut();
+    this.router.navigate(['home']);
     this.isLoggedIn = false;
     localStorage.removeItem('user');
   }

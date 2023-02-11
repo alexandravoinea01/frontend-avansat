@@ -12,11 +12,14 @@ import {provideFirestore, getFirestore} from '@angular/fire/firestore';
 import {AngularFireModule} from "@angular/fire/compat";
 import {LoginComponent} from "./components/login/login.component";
 import {RegisterComponent} from "./components/register/register.component";
-import {FirebaseService} from "./services/firebase.service";
+import {AuthService} from "./services/auth.service";
 import {HomeComponent} from './components/home/home.component';
 import {AuthFormComponent} from './shared/components/auth-form/auth-form.component';
 import {SideNavMenuComponent} from './shared/components/side-nav-menu/side-nav-menu.component';
-import {MatListModule} from "@angular/material/list";
+import {SurveyCreatedComponent} from './components/survey-created/survey-created.component';
+import {SurveyFormComponent} from "./components/survey-form/survey-form.component";
+import { SurveyCardComponent } from './shared/components/survey-card/survey-card.component';
+import { SurveysComponent } from './components/surveys/surveys.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,11 @@ import {MatListModule} from "@angular/material/list";
     RegisterComponent,
     HomeComponent,
     AuthFormComponent,
-    SideNavMenuComponent
+    SideNavMenuComponent,
+    SurveyFormComponent,
+    SurveyCreatedComponent,
+    SurveyCardComponent,
+    SurveysComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +44,7 @@ import {MatListModule} from "@angular/material/list";
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
   ],
-  providers: [FirebaseService],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
