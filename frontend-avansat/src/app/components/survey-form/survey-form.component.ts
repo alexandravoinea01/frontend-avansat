@@ -5,6 +5,7 @@ import {Router} from "@angular/router";
 import * as constants from "constants";
 import {CATEGORIES} from "../../shared";
 import {AnswerModel, QuestionModel} from "../../shared/models";
+import {SurveysService} from "../../services/surveys.service";
 
 @Component({
   selector: 'app-survey-form',
@@ -25,7 +26,8 @@ export class SurveyFormComponent implements OnInit {
   constructor(
     private router: Router,
     private snackBar: MatSnackBar,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private surveysService: SurveysService
   ) {
   }
 
@@ -82,7 +84,24 @@ export class SurveyFormComponent implements OnInit {
   }
 
   createSurvey() {
-    const surveyValue = this.surveyForm.getRawValue();
-    
+    if (this.surveyForm.valid && this.runQuestionsValidations()) {
+      this.surveysService.createSurvey(this.surveyForm.getRawValue())
+    } else {
+      this.snackBar.open('Each field must be completed. Every question must ' +
+        'have at least 2 choices.');
+    }
+  }
+
+  private runQuestionsValidations() {
+    let ok = true;
+    this.surveyForm.getRawValue().questions.forEach((question: QuestionModel) => {
+      if (question.text === '' || question.answers.length < 2)
+        ok = false;
+      question.answers.forEach((answer) => {
+        if (answer.text === '')
+          ok = false;
+      })
+    });
+    return ok;
   }
 }

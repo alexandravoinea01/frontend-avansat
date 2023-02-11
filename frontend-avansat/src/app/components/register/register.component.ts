@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {FirebaseService} from "../../services/firebase.service";
+import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -13,7 +13,7 @@ export class RegisterComponent {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    public firebaseService: FirebaseService
+    public firebaseService: AuthService
   ) {
   }
 

@@ -5,7 +5,7 @@ import {Router} from "@angular/router";
 @Injectable({
   providedIn: 'root'
 })
-export class FirebaseService {
+export class AuthService {
 
   isLoggedIn = !!localStorage.getItem('user');
 

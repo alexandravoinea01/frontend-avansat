@@ -15,6 +15,10 @@
       <mat-form-field floatLabel="always">
         <mat-label>Title</mat-label>
         <input matInput type="text" [formControl]=titleControl>
+
+        <mat-error *ngIf="titleControl.hasError('required')">
+          Please add a title.
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field floatLabel="always">
@@ -25,11 +29,19 @@
             {{option}}
           </mat-option>
         </mat-select>
+
+        <mat-error *ngIf="categoryControl.hasError('required')">
+          Please select a category.
+        </mat-error>
       </mat-form-field>
     </div>
     <mat-form-field floatLabel="always" class="textarea">
       <mat-label>Description</mat-label>
       <textarea matInput [formControl]="descriptionControl"></textarea>
+
+      <mat-error *ngIf="descriptionControl.hasError('required')">
+        Please add a description.
+      </mat-error>
     </mat-form-field>
 
     <div class="questions-container">

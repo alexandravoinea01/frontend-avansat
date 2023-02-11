@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {FirebaseService} from "../../services/firebase.service";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-home',

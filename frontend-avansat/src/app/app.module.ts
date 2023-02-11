@@ -12,7 +12,7 @@ import {provideFirestore, getFirestore} from '@angular/fire/firestore';
 import {AngularFireModule} from "@angular/fire/compat";
 import {LoginComponent} from "./components/login/login.component";
 import {RegisterComponent} from "./components/register/register.component";
-import {FirebaseService} from "./services/firebase.service";
+import {AuthService} from "./services/auth.service";
 import {HomeComponent} from './components/home/home.component';
 import {AuthFormComponent} from './shared/components/auth-form/auth-form.component';
 import {SideNavMenuComponent} from './shared/components/side-nav-menu/side-nav-menu.component';
@@ -40,7 +40,7 @@ import {SurveyFormComponent} from "./components/survey-form/survey-form.componen
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
   ],
-  providers: [FirebaseService],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
