@@ -3,6 +3,7 @@ import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {QuestionModel, SurveyModel} from "../shared/models";
 import {Router} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,8 @@ export class SurveysService {
   }
 
   createSurvey(survey: SurveyModel) {
+    // @ts-ignore
+    survey.createdBy = JSON.parse(localStorage.getItem('user')).email;
     return new Promise<any>((res, rej) => {
       this.angularFirestore
         .collection(SurveysService.collectionName)

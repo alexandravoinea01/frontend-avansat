@@ -87,21 +87,36 @@ export class SurveyFormComponent implements OnInit {
     if (this.surveyForm.valid && this.runQuestionsValidations()) {
       this.surveysService.createSurvey(this.surveyForm.getRawValue())
     } else {
-      this.snackBar.open('Each field must be completed. Every question must ' +
-        'have at least 2 choices.');
+      this.surveyForm.markAllAsTouched();
     }
   }
 
   private runQuestionsValidations() {
     let ok = true;
-    this.surveyForm.getRawValue().questions.forEach((question: QuestionModel) => {
-      if (question.text === '' || question.answers.length < 2)
+    const questions = this.surveyForm.getRawValue().questions;
+    questions.forEach((question: QuestionModel) => {
+      if (question.text === '') {
         ok = false;
+        this.snackBar.open('You must complete all of the questions added.');
+      } else if (question.answers.length < 2) {
+        ok = false;
+        this.snackBar.open('Every question must have at least 2 answers.');
+      } else if (questions.filter((q: QuestionModel) => q.text === question.text).length > 1) {
+        ok = false;
+        this.snackBar.open('Two questions must not be the same.');
+      }
+
       question.answers.forEach((answer) => {
-        if (answer.text === '')
+        if (answer.text === '' && ok) {
           ok = false;
-      })
+          this.snackBar.open('You must complete all of the answers added.');
+        } else if (question.answers.filter(ans => ans.text === answer.text).length > 1 && ok) {
+          ok = false;
+          this.snackBar.open('Two answers for the same question must not be the same.');
+        }
+      });
     });
+
     return ok;
   }
 }

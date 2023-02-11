@@ -18,6 +18,8 @@ import {AuthFormComponent} from './shared/components/auth-form/auth-form.compone
 import {SideNavMenuComponent} from './shared/components/side-nav-menu/side-nav-menu.component';
 import {SurveyCreatedComponent} from './components/survey-created/survey-created.component';
 import {SurveyFormComponent} from "./components/survey-form/survey-form.component";
+import { SurveyCardComponent } from './shared/components/survey-card/survey-card.component';
+import { SurveysComponent } from './components/surveys/surveys.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import {SurveyFormComponent} from "./components/survey-form/survey-form.componen
     AuthFormComponent,
     SideNavMenuComponent,
     SurveyFormComponent,
-    SurveyCreatedComponent
+    SurveyCreatedComponent,
+    SurveyCardComponent,
+    SurveysComponent
   ],
   imports: [
     BrowserModule,
