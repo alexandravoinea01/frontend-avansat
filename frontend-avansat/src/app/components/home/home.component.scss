@@ -1,0 +1,23 @@
+.background {
+  background-image: url("../../../assets/logo.png");
+  width: 1032px;
+  height: 1032px;
+  transform: scale(0.4);
+  //margin-top: -50px;
+  margin-left: -290px;
+}
+
+.text {
+  p {
+    font-size: 36px;
+    gap: 15px;
+  }
+}
+
+.home-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 90vh;
+}

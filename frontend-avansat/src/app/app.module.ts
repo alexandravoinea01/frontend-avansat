@@ -10,11 +10,13 @@ import {environment} from '../environments/environment';
 import {provideAuth, getAuth} from '@angular/fire/auth';
 import {provideFirestore, getFirestore} from '@angular/fire/firestore';
 import {AngularFireModule} from "@angular/fire/compat";
-import {LoginComponent} from "./shared/components/login/login.component";
-import {RegisterComponent} from "./shared/components/register/register.component";
+import {LoginComponent} from "./components/login/login.component";
+import {RegisterComponent} from "./components/register/register.component";
 import {FirebaseService} from "./services/firebase.service";
-import { HomeComponent } from './shared/components/home/home.component';
-import { AuthFormComponent } from './shared/components/auth-form/auth-form.component';
+import {HomeComponent} from './components/home/home.component';
+import {AuthFormComponent} from './shared/components/auth-form/auth-form.component';
+import {SideNavMenuComponent} from './shared/components/side-nav-menu/side-nav-menu.component';
+import {MatListModule} from "@angular/material/list";
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { AuthFormComponent } from './shared/components/auth-form/auth-form.compo
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    AuthFormComponent
+    AuthFormComponent,
+    SideNavMenuComponent
   ],
   imports: [
     BrowserModule,

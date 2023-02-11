@@ -1,22 +1,18 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
 import {FirebaseService} from "../../../services/firebase.service";
+import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-side-nav-menu',
+  templateUrl: './side-nav-menu.component.html',
+  styleUrls: ['./side-nav-menu.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class SideNavMenuComponent {
 
   constructor(
     private router: Router,
     public firebaseService: FirebaseService
   ) {
-  }
-
-  ngOnInit() {
-    console.log(this.firebaseService.isLoggedIn)
   }
 
   login() {

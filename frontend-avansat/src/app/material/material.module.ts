@@ -25,6 +25,7 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule} from "@angular/material/snack-bar";
 import {MatExpansionModule} from "@angular/material/expansion";
 import {ReactiveFormsModule} from "@angular/forms";
+import {MatListModule} from "@angular/material/list";
 
 const MATERIAL_MODULES = [
   MatButtonModule,
@@ -51,7 +52,8 @@ const MATERIAL_MODULES = [
   MatSlideToggleModule,
   MatSnackBarModule,
   MatExpansionModule,
-  ReactiveFormsModule
+  ReactiveFormsModule,
+  MatListModule
 ]
 
 @NgModule({
