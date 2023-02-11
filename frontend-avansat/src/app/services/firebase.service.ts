@@ -6,7 +6,7 @@ import {AngularFireAuth} from "@angular/fire/compat/auth";
 })
 export class FirebaseService {
 
-  isLoggedIn = false;
+  isLoggedIn = !!localStorage.getItem('user');
 
   constructor(
     public firebaseAuth: AngularFireAuth
