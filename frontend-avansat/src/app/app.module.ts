@@ -16,7 +16,8 @@ import {FirebaseService} from "./services/firebase.service";
 import {HomeComponent} from './components/home/home.component';
 import {AuthFormComponent} from './shared/components/auth-form/auth-form.component';
 import {SideNavMenuComponent} from './shared/components/side-nav-menu/side-nav-menu.component';
-import {MatListModule} from "@angular/material/list";
+import {SurveyCreatedComponent} from './components/survey-created/survey-created.component';
+import {SurveyFormComponent} from "./components/survey-form/survey-form.component";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,9 @@ import {MatListModule} from "@angular/material/list";
     RegisterComponent,
     HomeComponent,
     AuthFormComponent,
-    SideNavMenuComponent
+    SideNavMenuComponent,
+    SurveyFormComponent,
+    SurveyCreatedComponent
   ],
   imports: [
     BrowserModule,

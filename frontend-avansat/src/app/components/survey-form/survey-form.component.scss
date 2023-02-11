@@ -1,0 +1,61 @@
+.form-container {
+  min-height: 83vh;
+  //width: 100vw;
+  margin: 25px 25px;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 25px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+
+  mat-form-field {
+    margin-right: 50px;
+  }
+}
+
+.form-options {
+  display: flex;
+  flex-direction: row;
+
+  mat-form-field {
+    width: 225px;
+  }
+}
+
+.textarea {
+  width: 500px;
+}
+
+.questions-container {
+  display: flex;
+  flex-direction: column;
+
+  mat-form-field {
+    width: 500px;
+  }
+
+  .add-answer {
+    margin: 25px 0 25px 500px;
+  }
+
+  .add-question {
+    margin-left: 650px;
+    top: 50px
+  }
+}
+
+.questions .answers {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
