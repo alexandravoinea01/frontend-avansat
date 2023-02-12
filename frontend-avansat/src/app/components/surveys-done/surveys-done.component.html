@@ -2,7 +2,7 @@
   <div class="surveys-container">
     <div class="survey" *ngFor="let survey of surveys">
       <app-survey-card [survey]="survey"
-                       [hideButton]="survey.createdBy===currentUser"
+                       [hideButton]="true"
       ></app-survey-card>
     </div>
   </div>

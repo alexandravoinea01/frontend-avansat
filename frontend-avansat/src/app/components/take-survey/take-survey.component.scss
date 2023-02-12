@@ -1,0 +1,40 @@
+.form-container {
+  min-height: 83vh;
+  //width: 100vw;
+  margin: 25px 25px;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 25px;
+  }
+}
+
+.btns {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    margin-left: 20px;
+  }
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+}
+
+.answers {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  margin-left: 25px;
+
+  margin-bottom: 50px;
+}
+

@@ -8,7 +8,9 @@ export class QuestionModel {
 
 export class AnswerModel {
   constructor(
-    public text: string = ''
+    public text: string = '',
+    public chosen: boolean = false,
+    public count: number = 0
   ) {
   }
 }

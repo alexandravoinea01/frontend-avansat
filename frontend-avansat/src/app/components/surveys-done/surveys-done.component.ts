@@ -1,20 +1,19 @@
 import {Component, OnInit} from '@angular/core';
 import {SurveyModel} from "../../shared/models";
+import {Router} from "@angular/router";
 import {SurveysService} from "../../services/surveys.service";
 
 @Component({
-  selector: 'app-surveys',
-  templateUrl: './surveys.component.html',
-  styleUrls: ['./surveys.component.scss']
+  selector: 'app-surveys-done',
+  templateUrl: './surveys-done.component.html',
+  styleUrls: ['./surveys-done.component.scss']
 })
-export class SurveysComponent implements OnInit {
+export class SurveysDoneComponent implements OnInit {
 
   surveys!: SurveyModel[];
-  
-  // @ts-ignore
-  currentUser: string = JSON.parse(localStorage.getItem('user')).email;
 
   constructor(
+    private router: Router,
     private surveysService: SurveysService
   ) {
   }
@@ -24,6 +23,8 @@ export class SurveysComponent implements OnInit {
   }
 
   private setupSurveys() {
+    // @ts-ignore
+    const email = JSON.parse(localStorage.getItem('user')).email;
     this.surveysService.getSurveys()
       .subscribe({
         next: res => {
@@ -33,7 +34,8 @@ export class SurveysComponent implements OnInit {
                 id: e.payload.doc.id,
                 ...e.payload.doc.data() as {}
               } as SurveyModel
-            });
+            })
+            .filter(survey => survey.respondents.includes(email));
         }
       });
   }

@@ -1,0 +1,15 @@
+.container {
+  min-height: 83vh;
+  margin: 25px 25px;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 25px;
+  }
+}
+
+.answers {
+  margin-left: 50px;
+}

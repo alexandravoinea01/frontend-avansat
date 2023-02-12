@@ -19,11 +19,11 @@ export class SurveysService {
   ) {
   }
 
-  getSurveyById(id: string) {
+  getSurveyById(id: string): Observable<SurveyModel> {
     return this.angularFirestore
       .collection(SurveysService.collectionName)
       .doc(id)
-      .valueChanges();
+      .valueChanges() as Observable<SurveyModel>;
   }
 
   getSurveys() {
@@ -56,6 +56,8 @@ export class SurveysService {
   }
 
   updateSurvey(survey: SurveyModel, id: string) {
+    // @ts-ignore
+    survey.respondents.push(JSON.parse(localStorage.getItem('user')).email);
     return this.angularFirestore
       .collection(SurveysService.collectionName)
       .doc(id)
@@ -63,7 +65,8 @@ export class SurveysService {
         title: survey.title,
         category: survey.category,
         description: survey.description,
-        questions: survey.questions
+        questions: survey.questions,
+        respondents: survey.respondents
       });
   }
 }
