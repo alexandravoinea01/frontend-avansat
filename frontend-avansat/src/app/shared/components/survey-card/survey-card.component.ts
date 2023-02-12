@@ -23,4 +23,8 @@ export class SurveyCardComponent implements OnInit {
   takeSurvey() {
     this.router.navigate(['surveys', this.survey.id, 'take-survey']);
   }
+
+  viewResults() {
+    this.router.navigate([this.survey.id, 'results']);
+  }
 }

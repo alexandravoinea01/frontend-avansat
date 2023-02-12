@@ -16,8 +16,13 @@
   </mat-card-content>
   <mat-card-actions class="take-survey-button">
     <button mat-raised-button *ngIf="!hideButton"
+            color="primary"
             (click)="takeSurvey()"
     >Take survey!
+    </button>
+    <button mat-raised-button
+            (click)="viewResults()"
+    >View Results!
     </button>
   </mat-card-actions>
 </mat-card>
