@@ -7,7 +7,8 @@ export class SurveyModel {
     public category: string,
     public description: string,
     public questions: QuestionModel[],
-    public createdBy: string
+    public createdBy: string,
+    public respondents: string[] = []
   ) {
   }
 }

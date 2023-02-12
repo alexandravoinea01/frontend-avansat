@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="surveys-container">
+    <div class="survey" *ngFor="let survey of surveys">
+      <app-survey-card [survey]="survey"
+                       [hideButton]="true"
+      ></app-survey-card>
+    </div>
+  </div>
+</div>

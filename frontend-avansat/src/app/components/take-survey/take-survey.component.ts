@@ -88,12 +88,12 @@ export class TakeSurveyComponent implements OnInit {
       }
 
       this.surveysService.updateSurvey(survey, this.surveyId)
-        .then(res => {
-          this.router.navigate(['surveys']);
-          this.snackBar.open('Survey completed successfully.')
-        }, error => {
-          this.snackBar.open('An error occurred.')
-        })
+      // .then(res => {
+      //   this.router.navigate(['surveys']);
+      //   this.snackBar.open('Survey completed successfully.')
+      // }, error => {
+      //   this.snackBar.open('An error occurred.')
+      // })
     } else alert('You must answer all of the questions');
   }
 }

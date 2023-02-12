@@ -40,6 +40,7 @@ export class SurveyFormComponent implements OnInit {
       title: [null, Validators.required],
       category: [null, Validators.required],
       description: [null, Validators.required],
+      respondents: [[]],
       questions: this.fb.array([])
     });
 
@@ -88,6 +89,7 @@ export class SurveyFormComponent implements OnInit {
   createSurvey() {
     if (this.surveyForm.valid && this.runQuestionsValidations()) {
       this.surveysService.createSurvey(this.surveyForm.getRawValue())
+        .then(res => this.router.navigate(['profile', 'surveys-created']))
     } else {
       this.surveyForm.markAllAsTouched();
     }
