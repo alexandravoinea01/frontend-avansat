@@ -26,7 +26,7 @@
   </p>
 
   <div class="questions" *ngFor="let question of survey.questions; index as i">
-    <div>
+    <div class="question">
       <p>{{i + 1}}. {{question.text}}</p>
       <ul class="answers" *ngFor="let answer of question.answers;index as j">
         {{j + 1}}. {{answer.text}} - {{answer.count}} answers.

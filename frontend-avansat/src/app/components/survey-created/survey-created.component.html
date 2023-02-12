@@ -13,5 +13,9 @@
                        [hideButton]="true"
       ></app-survey-card>
     </div>
+
+    <div *ngIf="surveys.length === 0" style="font-size: 20px">
+      You have not created any surveys yet.
+    </div>
   </div>
 </div>

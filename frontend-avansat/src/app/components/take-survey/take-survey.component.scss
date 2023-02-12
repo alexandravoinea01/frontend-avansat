@@ -26,6 +26,10 @@
 .questions {
   display: flex;
   flex-direction: column;
+
+  .question {
+    margin-bottom: 25px;
+  }
 }
 
 .answers {
@@ -35,6 +39,5 @@
   align-items: center;
   margin-left: 25px;
 
-  margin-bottom: 50px;
 }
 
